@@ -1,3 +1,14 @@
+/** HACK: `sum(arr)` をリファクタリングしたい
+ *      <input>タグを使っている場所（rowValues, colValues）では使えるが、totalValueはこの関数を使えない。
+ *      `sum(<Arrayっぽい型>)` でtotalValueも合計できると使いまわしやすいし見た目もわかりやすくなります
+ *      このサンプルを書いたときに <input>と <th>または<div>タグでは
+ *       `getElementById().innerText` で取得すると別の型になって違う処理が必要になることが分かっています。
+ *      処理を一本化して、何かの配列を合計するときは `sum()` という形にできると最高です。
+ *
+ *      sum(arr)の処理とtotalValueの計算は、形が似ているのに別々に書いています。
+ *      こういった場所がリファクタリングの対象です。
+ */
+
 function sum(arr) {
     let total = 0;
     for(let i = 0; i < arr.length; i++) {
